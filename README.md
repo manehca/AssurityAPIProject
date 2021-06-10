@@ -18,9 +18,9 @@ To run this project, follow instructions below:
 
 1. Open solution through MS Visual Studio.
 2. Restore the Nuget Packages if required.
-  a. Newtonsoft.Json v13.0.1
-  b. RestSharp v106.11.7
-  c. MSTest.TestAdapter v2.1.1
-  d. MSTest.TestFramework v2.1.1
+  * Newtonsoft.Json v13.0.1
+  * RestSharp v106.11.7
+  * MSTest.TestAdapter v2.1.1
+  * MSTest.TestFramework v2.1.1
 4. Build solution
 5. On the Test Explorer, select test to run and click 'Run'
