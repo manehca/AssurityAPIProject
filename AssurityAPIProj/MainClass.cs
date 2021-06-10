@@ -2,9 +2,11 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 
 namespace AssurityAPIProj
 {
@@ -12,17 +14,16 @@ namespace AssurityAPIProj
     {
         public DataListDTO GetDataList()
         {
-            var restClient = new RestClient("https://api.tmsandbox.co.nz");
-            var restRequest = new RestRequest("https://api.tmsandbox.co.nz/v1/Categories/6327/Details.json?catalogue=false", Method.GET);
-            restRequest.AddHeader("Accept", "application/json");
-            restRequest.RequestFormat = DataFormat.Json;
+            BaseClass _baseClass = new BaseClass();
+            var restClient = _baseClass.SetUrl();
+            var restRequest = _baseClass.CreatetGetRequest();
+            var restResponse = (RestResponse)_baseClass.GetResponse(restClient, restRequest);
 
-            IRestResponse response = restClient.Execute(restRequest);
-            var content = response.Content;
-
-            var dataList = JsonConvert.DeserializeObject<DataListDTO>(content);
+            var dataList = JsonConvert.DeserializeObject<DataListDTO>(restResponse.Content);
             return dataList;
-        }    
+        }
+
+        
 
     }
 }

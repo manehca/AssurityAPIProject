@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AssurityAPIProj" GeneratedClassName="Settings1">
+  <Profiles />
+  <Settings>
+    <Setting Name="baseUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://api.tmsandbox.co.nz</Value>
+    </Setting>
+    <Setting Name="endPoint" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/v1/Categories/6327/Details.json?catalogue=false</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
