@@ -13,7 +13,15 @@ namespace APITesting
         {
             var mainPage = new MainClass();
             var response = mainPage.GetDataList();
-            Assert.AreEqual("carbon credits", response.Name.ToLower());
+            
+            try
+            {
+                Assert.AreEqual("carbon credits", response.Name.ToLower());
+            }
+            catch (AccessViolationException e)
+            {
+                throw e;
+            }
         }
 
         [TestMethod]
@@ -21,7 +29,15 @@ namespace APITesting
         {
             var mainPage = new MainClass();
             var response = mainPage.GetDataList();
-            Assert.IsTrue(response.CanRelist);
+           
+            try
+            {
+                Assert.IsTrue(response.CanRelist);
+            }
+            catch (AccessViolationException e)
+            {
+                throw e;
+            }
         }
 
         [TestMethod]
@@ -34,7 +50,14 @@ namespace APITesting
             {
                 if (promotions.Name.ToString().ToLower() == "gallery")
                 {
-                    Assert.IsTrue(promotions.Description.Contains("2x larger image"));
+                    try
+                    {
+                        Assert.IsTrue(promotions.Description.Contains("2x larger image"));
+                    }
+                    catch (AccessViolationException e)
+                    {
+                        throw e;
+                    }
                 }
 
             }
